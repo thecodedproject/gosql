@@ -25,7 +25,7 @@ type TypeChar struct{
 }
 
 func (t TypeChar) FullType() (string, error) {
-	return "char(" + strconv.FormatInt(N,10) + ")", nil
+	return "char(" + strconv.FormatInt(t.N,10) + ")", nil
 }
 
 type TypeDateTime struct{}
@@ -40,7 +40,7 @@ type TypeDecimal struct{
 }
 
 func (t TypeDecimal) FullType() (string, error) {
-	return "decimcal(" + strconv.FormatInt(P,10) + "," + strconv.FormatInt(S,10) + ")", nil
+	return "decimcal(" + strconv.FormatInt(t.P,10) + "," + strconv.FormatInt(t.S,10) + ")", nil
 }
 
 type TypeDouble struct{}
@@ -78,5 +78,5 @@ type TypeVarChar struct{
 }
 
 func (t TypeVarChar) FullType() (string, error) {
-	return "varchar(" + strconv.FormatInt(N,10) + ")", nil
+	return "varchar(" + strconv.FormatInt(t.N,10) + ")", nil
 }
