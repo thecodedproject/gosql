@@ -1,0 +1,4 @@
+create table my_table (
+  id int primary key auto_increment,
+  some_datetime datetime not null,
+);

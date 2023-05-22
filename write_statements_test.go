@@ -20,6 +20,35 @@ func TestWriteStatements(t *testing.T) {
 		{
 			Name: "no statements writes nothing",
 		},
+		{
+			Name: "create single table with no fields",
+			Statements: []gosql.Statement{
+				gosql.CreateTable{
+					Name: "some_model",
+				},
+			},
+		},
+		{
+			Name: "create single table with some fields",
+			Statements: []gosql.Statement{
+				gosql.CreateTable{
+					Name: "my_table",
+					Fields: []gosql.Field{
+						{
+							Name: "id",
+							Type: gosql.TypeInt{},
+							PrimaryKey: true,
+							AutoIncrement: true,
+						},
+						{
+							Name: "some_datetime",
+							Type: gosql.TypeDateTime{},
+							NotNull: true,
+						},
+					},
+				},
+			},
+		},
 	}
 
 	for _, test := range testCases {
