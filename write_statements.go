@@ -20,7 +20,7 @@ func WriteStatements(
 
 		w.Write([]byte("create table " + t.Name + " (\n"))
 
-		for _, f := range t.Fields {
+		for i, f := range t.Fields {
 
 			fullType, err := f.Type.FullType()
 			if err != nil {
@@ -41,7 +41,10 @@ func WriteStatements(
 				w.Write([]byte(" not null"))
 			}
 
-			w.Write([]byte(",\n"))
+			if i < len(t.Fields) - 1 {
+				w.Write([]byte(","))
+			}
+			w.Write([]byte("\n"))
 		}
 
 		w.Write([]byte(");\n"))
