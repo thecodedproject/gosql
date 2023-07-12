@@ -45,6 +45,11 @@ func TestWriteStatements(t *testing.T) {
 							Type: gosql.TypeDateTime{},
 							NotNull: true,
 						},
+						{
+							Name: "some_float",
+							Type: gosql.TypeFloat{},
+							NotNull: true,
+						},
 					},
 				},
 			},
