@@ -25,13 +25,21 @@ type TypeChar struct{
 }
 
 func (t TypeChar) FullType() (string, error) {
+	if t.N == 0 {
+		return "char", nil
+	}
 	return "char(" + strconv.FormatInt(t.N,10) + ")", nil
 }
 
-type TypeDateTime struct{}
+type TypeDateTime struct{
+	N int64
+}
 
 func (t TypeDateTime) FullType() (string, error) {
-	return "datetime", nil
+	if t.N == 0 {
+		return "datetime", nil
+	}
+	return "datetime(" + strconv.FormatInt(t.N,10) + ")", nil
 }
 
 type TypeDecimal struct{

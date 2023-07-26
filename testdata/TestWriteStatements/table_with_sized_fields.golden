@@ -1,0 +1,4 @@
+create table my_sized_table (
+  some_datetime_5 datetime(5) not null,
+  some_char_123 char(123) not null
+);

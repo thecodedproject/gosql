@@ -1,5 +1,6 @@
 create table my_table (
   id int primary key auto_increment,
   some_datetime datetime not null,
-  some_float float not null
+  some_float float not null,
+  some_char char not null
 );

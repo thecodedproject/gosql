@@ -50,6 +50,31 @@ func TestWriteStatements(t *testing.T) {
 							Type: gosql.TypeFloat{},
 							NotNull: true,
 						},
+						{
+							Name: "some_char",
+							Type: gosql.TypeChar{},
+							NotNull: true,
+						},
+					},
+				},
+			},
+		},
+		{
+			Name: "table with sized fields",
+			Statements: []gosql.Statement{
+				gosql.CreateTable{
+					Name: "my_sized_table",
+					Fields: []gosql.Field{
+						{
+							Name: "some_datetime_5",
+							Type: gosql.TypeDateTime{N: 5},
+							NotNull: true,
+						},
+						{
+							Name: "some_char_123",
+							Type: gosql.TypeChar{N: 123},
+							NotNull: true,
+						},
 					},
 				},
 			},

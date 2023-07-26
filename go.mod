@@ -3,6 +3,7 @@ module github.com/thecodedproject/gosql
 go 1.20
 
 require (
+	github.com/pkg/errors v0.8.1
 	github.com/sebdah/goldie/v2 v2.5.3
 	github.com/stretchr/testify v1.8.3
 )
